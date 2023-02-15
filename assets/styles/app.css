@@ -1,3 +1,80 @@
+root {
+    --background-white: #FAFAFA;
+    --blue: #131647 !important;
+    --purple: #5A0BA9;
+    --gray: #555B61;
+    --white-purple: #DAC2F2;
+}
+
+
 body {
-    background-color: lightgray;
+    background-color:  #FAFAFA;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    margin: 0 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    width: 20rem !important;
+}
+
+.navbar {
+    background-color: #5A0BA9 !important;
+}
+
+.connect {
+    color: #FAFAFA;
+}
+
+.nav-cate {
+    width: 85%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0.5rem 0;
+    list-style-type: none;
+}
+
+.nav-cate * {
+    color: #FAFAFA;
+}
+
+nav {
+    background-color: #131647;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-logo{
+    background-image:url('../../public/images/Icon-feather-search.png');
+    background-position: 95%;
+    background-repeat:no-repeat;
+    background-size: 12%;
+    padding-left:1px;
+    font-size: 16px;
+    width: 12rem;
+    border-radius: 8px;
+    height: 2rem;
+    border: none;
+    padding: 10px;
+}
+
+footer {
+    background-color: #5A0BA9;
+}
+
+.text-muted {
+    color: #FAFAFA  !important;
 }
