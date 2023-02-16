@@ -17,12 +17,8 @@ body {
     box-sizing: border-box;
 }
 
-.header {
+.header, main {
     margin: 0 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
 }
 
 .logo {
@@ -132,4 +128,8 @@ h3 {
 
 .fav {
     border: none;
+}
+
+.card {
+    margin: 1rem;
 }
