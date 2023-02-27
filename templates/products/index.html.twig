@@ -8,13 +8,80 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <main>
+        <div class="filter mt-3">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle my-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Type
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">PS5</a></li>
+                    <li><a class="dropdown-item" href="#">PS4</a></li>
+                    <li><a class="dropdown-item" href="#">Xbox</a></li>
+                    <li><a class="dropdown-item" href="#">PC</a></li>
+                    <li><a class="dropdown-item" href="#">Switch</a></li>
+                    <li><a class="dropdown-item" href="#">Accessoires</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="card-container d-flex justify-content-between flex-wrap">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ asset('images/0e7dadd871f9043b791e34d32f7862ef6a47c41c.png') }}" class="card-img-top" alt="image article">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="card-title">Rocket League</h5>
+                        <p class="card-text">il y a 1 mois</p>
+                    </div>
+                    <p class="card-text">Christopho207</p>
+                    <div class="d-flex justify-content-between">
+                        <button class="button-empty"><a>Voir plus</a></button>
+                        <button class="fav"><img src="{{ asset('images/Icon-feather-heart.png') }}" class="card-img-top" alt="favorite"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="{{ asset('images/0e7dadd871f9043b791e34d32f7862ef6a47c41c.png') }}" class="card-img-top" alt="image article">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="card-title">Rocket League</h5>
+                        <p class="card-text">il y a 1 mois</p>
+                    </div>
+                    <p class="card-text">Christopho207</p>
+                    <div class="d-flex justify-content-between">
+                        <button class="button-empty"><a>Voir plus</a></button>
+                        <button class="fav"><img src="{{ asset('images/Icon-feather-heart.png') }}" class="card-img-top" alt="favorite"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="{{ asset('images/0e7dadd871f9043b791e34d32f7862ef6a47c41c.png') }}" class="card-img-top" alt="image article">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="card-title">Rocket League</h5>
+                        <p class="card-text">il y a 1 mois</p>
+                    </div>
+                    <p class="card-text">Christopho207</p>
+                    <div class="d-flex justify-content-between">
+                        <button class="button-empty"><a>Voir plus</a></button>
+                        <button class="fav"><img src="{{ asset('images/Icon-feather-heart.png') }}" class="card-img-top" alt="favorite"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img src="{{ asset('images/0e7dadd871f9043b791e34d32f7862ef6a47c41c.png') }}" class="card-img-top" alt="image article">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                        <h5 class="card-title">Rocket League</h5>
+                        <p class="card-text">il y a 1 mois</p>
+                    </div>
+                    <p class="card-text">Christopho207</p>
+                    <div class="d-flex justify-content-between">
+                        <button class="button-empty"><a>Voir plus</a></button>
+                        <button class="fav"><img src="{{ asset('images/Icon-feather-heart.png') }}" class="card-img-top" alt="favorite"></button>
+                    </div>
+                </div>
+            </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/src/Controller/ProductsController.php'|file_link(0) }}">src/Controller/ProductsController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/templates/products/index.html.twig'|file_link(0) }}">templates/products/index.html.twig</a></code></li>
-    </ul>
-</div>
+        </div>
+    </main>
 {% endblock %}

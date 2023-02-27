@@ -60,6 +60,12 @@ cd symfony-docker-template
 cp .env.example .env
 ```
 
+### Installation des dépendances Symfony
+ - Installer les dépendances, éxécute les recettes symfony flex puis régénère le fichier autoload
+```shell
+docker compose exec php_8.2 composer install && composer dump-autoload
+```
+
 ### Installation des dépendances Javascript
 - Installer les dépendances puis construire les assets
 ```shell

@@ -21,6 +21,14 @@ body {
     margin: 0 3rem;
 }
 
+a {
+    text-decoration: none !important;
+}
+
+a:hover {
+    text-decoration: white;
+}
+
 .logo {
     width: 20rem !important;
 }
@@ -30,7 +38,7 @@ body {
 }
 
 .connect {
-    color: #FAFAFA;
+    color: #FAFAFA !important;
 }
 
 .nav-cate {
@@ -42,7 +50,7 @@ body {
     list-style-type: none;
 }
 
-.nav-cate *, a {
+.nav-cate * {
     color: #FAFAFA !important;
 }
 
@@ -131,5 +139,5 @@ h3 {
 }
 
 .card {
-    margin: 1rem;
+    margin: 0.5rem;
 }
