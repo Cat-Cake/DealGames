@@ -14,73 +14,35 @@
                 <button class="btn btn-secondary dropdown-toggle my-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Type
                 </button>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">PS5</a></li>
-                    <li><a class="dropdown-item" href="#">PS4</a></li>
-                    <li><a class="dropdown-item" href="#">Xbox</a></li>
-                    <li><a class="dropdown-item" href="#">PC</a></li>
-                    <li><a class="dropdown-item" href="#">Switch</a></li>
-                    <li><a class="dropdown-item" href="#">Accessoires</a></li>
-                </ul>
+                    <ul class="dropdown-menu">
+                        {% for type in types %}
+                            <li><a class="dropdown-item" href="/{{ type.name }}">{{ type.name }}</a></li>
+                        {% endfor %}
+{#                        <li><a class="dropdown-item" href="#">PS4</a></li>#}
+{#                        <li><a class="dropdown-item" href="#">Xbox</a></li>#}
+{#                        <li><a class="dropdown-item" href="#">PC</a></li>#}
+{#                        <li><a class="dropdown-item" href="#">Switch</a></li>#}
+{#                        <li><a class="dropdown-item" href="#">Accessoires</a></li>#}
+                    </ul>
             </div>
         </div>
-        <div class="card-container d-flex justify-content-between flex-wrap">
-            <div class="card" style="width: 18rem;">
-                <img src="{{ asset('images/0e7dadd871f9043b791e34d32f7862ef6a47c41c.png') }}" class="card-img-top" alt="image article">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                        <h5 class="card-title">Rocket League</h5>
-                        <p class="card-text">il y a 1 mois</p>
-                    </div>
-                    <p class="card-text">Christopho207</p>
-                    <div class="d-flex justify-content-between">
-                        <button class="button-empty"><a>Voir plus</a></button>
-                        <button class="fav"><img src="{{ asset('images/Icon-feather-heart.png') }}" class="card-img-top" alt="favorite"></button>
-                    </div>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="{{ asset('images/0e7dadd871f9043b791e34d32f7862ef6a47c41c.png') }}" class="card-img-top" alt="image article">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                        <h5 class="card-title">Rocket League</h5>
-                        <p class="card-text">il y a 1 mois</p>
-                    </div>
-                    <p class="card-text">Christopho207</p>
-                    <div class="d-flex justify-content-between">
-                        <button class="button-empty"><a>Voir plus</a></button>
-                        <button class="fav"><img src="{{ asset('images/Icon-feather-heart.png') }}" class="card-img-top" alt="favorite"></button>
+        <div class="card-container d-flex justify-content-around flex-wrap">
+            {% for article in articles %}
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ vich_uploader_asset(article, 'imageFile') }}" class="card-img-top" alt="image article">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title">{{ article.title }}</h5>
+                            <p class="card-text">Il y a 1 mois</p>
+                        </div>
+                        <p class="card-text">{{ article.description }}</p>
+                        <div class="d-flex justify-content-between">
+                            <button class="button-empty"><a>Voir plus</a></button>
+                            <button class="fav"><img src="{{ asset('images/Icon-feather-heart.png') }}" class="card-img-top" alt="favorite"></button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="{{ asset('images/0e7dadd871f9043b791e34d32f7862ef6a47c41c.png') }}" class="card-img-top" alt="image article">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                        <h5 class="card-title">Rocket League</h5>
-                        <p class="card-text">il y a 1 mois</p>
-                    </div>
-                    <p class="card-text">Christopho207</p>
-                    <div class="d-flex justify-content-between">
-                        <button class="button-empty"><a>Voir plus</a></button>
-                        <button class="fav"><img src="{{ asset('images/Icon-feather-heart.png') }}" class="card-img-top" alt="favorite"></button>
-                    </div>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="{{ asset('images/0e7dadd871f9043b791e34d32f7862ef6a47c41c.png') }}" class="card-img-top" alt="image article">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between">
-                        <h5 class="card-title">Rocket League</h5>
-                        <p class="card-text">il y a 1 mois</p>
-                    </div>
-                    <p class="card-text">Christopho207</p>
-                    <div class="d-flex justify-content-between">
-                        <button class="button-empty"><a>Voir plus</a></button>
-                        <button class="fav"><img src="{{ asset('images/Icon-feather-heart.png') }}" class="card-img-top" alt="favorite"></button>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
 
         </div>
     </main>

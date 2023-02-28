@@ -1,3 +1,15 @@
+/* reset css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* end reset css */
+
+/* color */
+
 root {
     --background-white: #FAFAFA;
     --blue: #131647 !important;
@@ -11,11 +23,35 @@ body {
     background-color:  #FAFAFA;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+a:hover {
+    text-decoration: white;
 }
+
+.navbar {
+    background-color: #5A0BA9 !important;
+}
+
+.connect {
+    color: #FAFAFA !important;
+}
+
+.nav-cate * {
+    color: #FAFAFA !important;
+}
+
+nav {
+    background-color: #131647;
+}
+
+footer {
+    background-color: #5A0BA9;
+}
+
+.text-muted {
+    color: #FAFAFA  !important;
+}
+
+/* end color */
 
 .header, main {
     margin: 0 3rem;
@@ -25,20 +61,8 @@ a {
     text-decoration: none !important;
 }
 
-a:hover {
-    text-decoration: white;
-}
-
 .logo {
     width: 20rem !important;
-}
-
-.navbar {
-    background-color: #5A0BA9 !important;
-}
-
-.connect {
-    color: #FAFAFA !important;
 }
 
 .nav-cate {
@@ -50,12 +74,7 @@ a:hover {
     list-style-type: none;
 }
 
-.nav-cate * {
-    color: #FAFAFA !important;
-}
-
 nav {
-    background-color: #131647;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,14 +92,6 @@ nav {
     height: 2rem;
     border: none;
     padding: 10px;
-}
-
-footer {
-    background-color: #5A0BA9;
-}
-
-.text-muted {
-    color: #FAFAFA  !important;
 }
 
 .text-img, .text-img-2, .text-img-3 {
@@ -140,4 +151,23 @@ h3 {
 
 .card {
     margin: 0.5rem;
+}
+
+.add-products {
+    width: 100%;
+    height: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.add-products * {
+    margin: 0.2rem 0;
+}
+
+.title-container, .description-title, .image-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }

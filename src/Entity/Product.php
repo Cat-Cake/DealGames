@@ -39,6 +39,9 @@ class Product
     #[Vich\UploadableField(mapping: 'products', fileNameProperty: 'imageName')]
     private ?File $imageFile = null;
 
+    #[ORM\ManyToOne(inversedBy: 'products')]
+    private ?Type $type = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -127,5 +130,17 @@ class Product
     public function getImageFile(): ?File
     {
         return $this->imageFile;
+    }
+
+    public function getType(): ?Type
+    {
+        return $this->type;
+    }
+
+    public function setType(?Type $type): self
+    {
+        $this->type = $type;
+
+        return $this;
     }
 }
