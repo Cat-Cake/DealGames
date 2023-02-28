@@ -2,6 +2,8 @@
 
 namespace App\Form;
 
+use App\Entity\Type;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -14,6 +16,10 @@ class ProductType extends AbstractType
         $builder
             ->add('title')
             ->add('description')
+            ->add('type', EntityType::class, [
+                'class' => Type::class,
+                'choice_label' => 'name'
+            ])
             ->add('imageFile', VichImageType::class, [
                 'required' => false,
                 'allow_delete' => true,

@@ -22,6 +22,10 @@
                 <div class="description-title">{{ form_label(form.description, "Description") }}</div>
                 {{ form_widget(form.description) }}
         </div>
+        <div class="type-container">
+                {{ form_label(form.type, "Plateforme") }}
+                {{ form_widget(form.type) }}
+        </div>
         <div class="image-container">
                 {{ form_label(form.imageFile) }}
                 {{ form_widget(form.imageFile) }}
