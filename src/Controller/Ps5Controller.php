@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class Ps5Controller extends AbstractController
 {
-    #[Route('/ps5', name: 'app_ps5')]
+    #[Route('/ps5', name: 'PS5')]
     public function index(): Response
     {
         return $this->render('ps5/index.html.twig', [
