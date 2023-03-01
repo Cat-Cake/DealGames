@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProductsController!{% endblock %}
+{% block title %}Catalogue{% endblock %}
 
 {% block body %}
 <style>
@@ -16,7 +16,7 @@
                 </button>
                     <ul class="dropdown-menu">
                         {% for type in types %}
-                            <li><a class="dropdown-item" href="/products/{{ type.name }}">{{ type.name }}</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_ps5') }}">{{ type.name }}</a></li>
                         {% endfor %}
 {#                        <li><a class="dropdown-item" href="#">PS4</a></li>#}
 {#                        <li><a class="dropdown-item" href="#">Xbox</a></li>#}
