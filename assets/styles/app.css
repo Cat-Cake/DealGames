@@ -207,3 +207,11 @@ h3 {
 .description-container {
     width: 50%;
 }
+
+.card {
+    border-color: #5A0BA9;
+}
+
+i {
+    color: #5A0BA9;
+}
