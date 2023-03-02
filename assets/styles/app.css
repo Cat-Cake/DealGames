@@ -172,6 +172,20 @@ h3 {
     text-align: center;
 }
 
-.image-container {
-    width: 45%;
+.add-products form {
+    width: 50%;
+    height: 30%;
+    margin-top: -20%;
 }
+
+/*.image-container *{*/
+/*    width: 30%;*/
+/*}*/
+
+.vich-image img {
+    width: 30%;
+}
+
+/*.add-products form {*/
+/*    width: 50%;*/
+/*}*/
