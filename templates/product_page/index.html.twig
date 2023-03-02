@@ -8,7 +8,7 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<main>
+<main class="d-flex justify-content-around align-items-center flex-wrap">
     <article class="my-5">
         <div class="details-img-container">
             <img src="{{ vich_uploader_asset(product, 'imageFile') }}" class="img-fluid" alt="image article">
@@ -20,7 +20,28 @@
         <div class="description-container">
             <p class="">{{ product.description }}</p>
         </div>
-
+    </article>
+    <article class="details-contact-card">
+        <div class="card">
+            <div class="card" style="width: 25rem;">
+                <div class="card-body d-flex justify-content-around align-items-center">
+                    <div>
+                        <h5 class="card-title">USERNAME</h5>
+                        <h6 class="card-subtitle mb-2 text-secondary">N ANNONCES</h6>
+                    </div>
+                    <div class="button-container">
+                        <a href="#"><button class="button-full">Voir plus</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <a href="#"><button class="button-empty long mb-3">Partager</button></a>
+                <div>
+                    <p><i>Email : </i>emai@example.com</p>
+                    <p><i>Tel : </i>0606060606</p>
+                </div>
+            </div>
+        </div>
     </article>
 </main>
 {% endblock %}

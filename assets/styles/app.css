@@ -132,6 +132,10 @@ h3 {
     color: #FAFAFA !important;
 }
 
+ .long {
+     width: 100%;
+ }
+
 .button-full {
     padding: 0.5rem 1rem;
     border: none;
@@ -143,6 +147,7 @@ h3 {
 .button-full:hover {
     background-color: #FAFAFA;
     color: #5A0BA9;
+    border: #5A0BA9 2px solid;
 }
 
 .fav {
@@ -191,10 +196,14 @@ h3 {
 /*}*/
 
 .details-img-container {
-    width: 30%;
+    width: 25rem;
 }
 
 .details-product-container {
     display: flex;
     justify-content: space-between;
+}
+
+.description-container {
+    width: 50%;
 }
