@@ -35,7 +35,7 @@
                         </div>
                         <p class="card-text">{{ article.description }}</p>
                         <div class="d-flex justify-content-between">
-                            <button class="button-empty"><a>Voir plus</a></button>
+                            <a href="{{ path('app_product_page.detail', {id: article.id}) }}"><button class="button-empty">Voir plus</button></a>
                             <button class="fav"><img src="{{ asset('images/Icon-feather-heart.png') }}" class="card-img-top" alt="favorite"></button>
                         </div>
                     </div>

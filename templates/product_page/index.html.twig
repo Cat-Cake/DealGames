@@ -8,15 +8,17 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<main>
+    <section>
+        <div>
+            <img src="{{ vich_uploader_asset(product, 'imageFile') }}" class="" alt="image article">
+            <h5 class="title">{{ product.title }}</h5>
+            <p>Il y a 1 mois</p>
+        </div>
+        <div class="description-container">
+            <p class="">{{ product.description }}</p>
+        </div>
 
-
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/src/Controller/ProductPageController.php'|file_link(0) }}">src/Controller/ProductPageController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/templates/product_page/index.html.twig'|file_link(0) }}">templates/product_page/index.html.twig</a></code></li>
-    </ul>
-</div>
+    </section>
+</main>
 {% endblock %}
