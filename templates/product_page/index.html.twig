@@ -9,16 +9,18 @@
 </style>
 
 <main>
-    <section>
-        <div>
-            <img src="{{ vich_uploader_asset(product, 'imageFile') }}" class="" alt="image article">
-            <h5 class="title">{{ product.title }}</h5>
-            <p>Il y a 1 mois</p>
+    <article class="my-5">
+        <div class="details-img-container">
+            <img src="{{ vich_uploader_asset(product, 'imageFile') }}" class="img-fluid" alt="image article">
+            <section class="details-product-container">
+                <h5 class="title">{{ product.title }}</h5>
+                <p>Il y a 1 mois</p>
+            </section>
         </div>
         <div class="description-container">
             <p class="">{{ product.description }}</p>
         </div>
 
-    </section>
+    </article>
 </main>
 {% endblock %}

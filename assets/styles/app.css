@@ -189,3 +189,12 @@ h3 {
 /*.add-products form {*/
 /*    width: 50%;*/
 /*}*/
+
+.details-img-container {
+    width: 30%;
+}
+
+.details-product-container {
+    display: flex;
+    justify-content: space-between;
+}
