@@ -7,9 +7,10 @@
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
 
-    <h1>Register</h1>
+<main>
+    <section class="my-5 w-100 d-flex justify-content-center align-center">
 
-    {{ form_start(registrationForm) }}
+        {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.email) }}
         {{ form_row(registrationForm.username) }}
         {{ form_row(registrationForm.plainPassword, {
@@ -17,6 +18,8 @@
         }) }}
         {{ form_row(registrationForm.agreeTerms) }}
 
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
+        <button type="submit" class="btn button-full">Envoyer</button>
+        {{ form_end(registrationForm) }}
+    </section>
+</main>
 {% endblock %}
