@@ -49,6 +49,43 @@ class ProductRepository extends ServiceEntityRepository
     }
 
 
+    public function getCreatedAtFormatted(): array
+    {
+        $qb = $this->createQueryBuilder('p')
+            ->select('p.id', 'p.createdAt')
+            ->getQuery();
+
+        $results = $qb->getResult();
+
+        $formattedResults = [];
+
+        foreach ($results as $result) {
+            $createdAt = $result['createdAt'];
+            $now = new \DateTimeImmutable();
+
+            $interval = $now->diff($createdAt);
+
+            if ($interval->d >= 1) {
+                $timeAgo = $interval->format('Créé il y a %d jours');
+            } elseif ($interval->h >= 1) {
+                $timeAgo = $interval->format('Créé il y a %h heures');
+            } elseif ($interval->i >= 1) {
+                $timeAgo = $interval->format('Créé il y a %i minutes');
+            } else {
+                $timeAgo = 'Créé il y a quelques secondes';
+            }
+
+            $formattedResults[$result['id']] = [
+                'time_ago' => $timeAgo,
+            ];
+        }
+
+        return $formattedResults;
+    }
+
+
+
+
 //    /**
 //     * @return Product[] Returns an array of Product objects
 //     */

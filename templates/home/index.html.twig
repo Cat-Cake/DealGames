@@ -47,14 +47,13 @@
     <main>
         <h3 id="lastAnn">Les dernières annonces</h3>
         <div class="card-container d-flex justify-content-between flex-wrap">
-
                     {% for article in articles %}
                         <div class="card" style="width: 18rem;">
                             <img src="{{ vich_uploader_asset(article, 'imageFile') }}" class="card-img-top" alt="image article">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between">
                                     <h5 class="card-title">{{ article.title }}</h5>
-                                    <p class="card-text">Il y a 1 mois</p>
+                                        <li>Il y à 1 mois</li>
                                 </div>
                                 <p class="card-text">{{ article.description }}</p>
                                 <div class="d-flex justify-content-between">
@@ -64,7 +63,6 @@
                             </div>
                         </div>
                     {% endfor %}
-
         </div>
         <a class="my-5 d-flex justify-content-center" href="/products"><button class="button-empty">Catalogue</button></a>
     </main>

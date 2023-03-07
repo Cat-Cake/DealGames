@@ -25,22 +25,22 @@
             </div>
         </div>
         <div class="card-container d-flex justify-content-around flex-wrap">
-            {% for article in articles %}
-                <div class="card" style="width: 18rem;">
-                    <img src="{{ vich_uploader_asset(article, 'imageFile') }}" class="card-img-top" alt="image article">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <h5 class="card-title">{{ article.title }}</h5>
-                            <p class="card-text">Il y a 1 mois</p>
-                        </div>
-                        <p class="card-text">{{ article.description }}</p>
-                        <div class="d-flex justify-content-between">
-                            <a href="{{ path('app_product_page.detail', {id: article.id}) }}"><button class="button-empty">Voir plus</button></a>
-                            <button class="fav"><img src="{{ asset('images/Icon-feather-heart.png') }}" class="card-img-top" alt="favorite"></button>
+                {% for article in articles %}
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ vich_uploader_asset(article, 'imageFile') }}" class="card-img-top" alt="image article">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between">
+                                <h5 class="card-title">{{ article.title }}</h5>
+                                    <p class="card-text">Il y a 1 mois</p>
+                            </div>
+                            <p class="card-text">{{ article.description }}</p>
+                            <div class="d-flex justify-content-between">
+                                <a href="{{ path('app_product_page.detail', {id: article.id}) }}"><button class="button-empty">Voir plus</button></a>
+                                <button class="fav"><img src="{{ asset('images/Icon-feather-heart.png') }}" class="card-img-top" alt="favorite"></button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
 
         </div>
     </main>

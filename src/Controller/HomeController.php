@@ -15,6 +15,7 @@ class HomeController extends AbstractController
         $liste = $repo->findAll();
         $findLatestFourProducts = $repo->findLatestFourProducts();
 
+
         return $this->render('home/index.html.twig', [
             'articles' => $findLatestFourProducts,
         ]);
