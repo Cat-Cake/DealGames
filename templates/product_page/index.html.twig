@@ -26,8 +26,7 @@
             <div class="card" style="width: 25rem;">
                 <div class="card-body d-flex justify-content-around align-items-center">
                     <div>
-                        <h5 class="card-title">USERNAME</h5>
-                        <h6 class="card-subtitle mb-2 text-secondary">N ANNONCES</h6>
+                        <h5 class="card-title">{{ currentuUsers.username }}</h5>
                     </div>
                     <div class="button-container">
                         <a href="#"><button class="button-full">Voir plus</button></a>
@@ -37,8 +36,8 @@
             <div class="card-body">
                 <a href="#"><button class="button-empty long mb-3">Partager</button></a>
                 <div>
-                    <p><i>Email : </i>emai@example.com</p>
-                    <p><i>Tel : </i>0606060606</p>
+                    <p><i>Email : </i>{{ currentuUsers.email }}</p>
+{#                    <p><i>Tel : </i>0606060606</p>#}
                 </div>
             </div>
         </div>
