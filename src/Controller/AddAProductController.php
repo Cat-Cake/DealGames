@@ -15,13 +15,17 @@ use Symfony\Config\Framework\RequestConfig;
 
 class AddAProductController extends AbstractController
 {
+    private $security;
+
     #[Route('/addproduct', name: 'app_add_a_product')]
     public function index(Request $request, ProductRepository $productRepository): Response
     {
         $products = new Product();
         $form = $this->createForm(ProductType::class, $products);
         $form-> handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid()){
+            $products->setUser($this->getUser());
             $productRepository->save($products, true);
         }
         return $this->render('add_a_product/index.html.twig', [
