@@ -8,13 +8,25 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <main>
+        <div class="card-container d-flex justify-content-around flex-wrap">
+            {% for articleType in articlesType %}
+                <div class="card" style="width: 18rem;">
+                    <img src="{{ vich_uploader_asset(articleType, 'imageFile') }}" class="card-img-top" alt="image article">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title">{{ articleType.title }}</h5>
+                            <p class="card-text">Il y a 1 mois</p>
+                        </div>
+                        <p class="card-text">{{ articleType.description }}</p>
+                        <div class="d-flex justify-content-between">
+                            <a href="{{ path('app_product_page.detail', {id: articleType.id}) }}"><button class="button-empty">Voir plus</button></a>
+                            <button class="fav"><img src="{{ asset('images/Icon-feather-heart.png') }}" class="card-img-top" alt="favorite"></button>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/var/www/src/Controller/DesktopController.php'|file_link(0) }}">src/Controller/DesktopController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/var/www/templates/desktop/index.html.twig'|file_link(0) }}">templates/desktop/index.html.twig</a></code></li>
-    </ul>
-</div>
+        </div>
+    </main>
 {% endblock %}

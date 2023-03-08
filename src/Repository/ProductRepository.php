@@ -77,6 +77,15 @@ class ProductRepository extends ServiceEntityRepository
         return $queryBuilder->getQuery()->getResult();
     }
 
+    public function findAllWithUser(int $productsByUser): array
+    {
+        $queryBuilder = $this->createQueryBuilder('p');
+        $queryBuilder->where('p.users = :user_id')
+            ->setParameter('user_id', $productsByUser);
+
+        return $queryBuilder->getQuery()->getResult();
+    }
+
 
 
 

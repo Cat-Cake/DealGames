@@ -16,12 +16,12 @@ class ProductsController extends AbstractController
     {
         $liste = $repo->findAll();
         $listeType = $type->findAll();
-        $getTime = $repo->getCreatedAtFormatted();
+//        $getTime = $repo->getCreatedAtFormatted();
 
         return $this->render('products/index.html.twig', [
               'articles' => $liste,
               'types' => $listeType,
-            'times' => $getTime,
+//            'times' => $getTime,
         ]);
     }
 }
