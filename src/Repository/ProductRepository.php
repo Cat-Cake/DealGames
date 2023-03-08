@@ -5,6 +5,8 @@ namespace App\Repository;
 use App\Entity\Product;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\NonUniqueResultException;
+use Doctrine\ORM\NoResultException;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Response;
 use App\Entity\Post;
@@ -51,6 +53,10 @@ class ProductRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    /**
+     * @throws NonUniqueResultException
+     * @throws NoResultException
+     */
     public function countUserPosts($user): int
     {
         $queryBuilder = $this->createQueryBuilder('p');
@@ -62,7 +68,14 @@ class ProductRepository extends ServiceEntityRepository
     }
 
 
+    public function findAllWithType(int $productType): array
+    {
+        $queryBuilder = $this->createQueryBuilder('p');
+        $queryBuilder->where('p.type = :type_id')
+            ->setParameter('type_id', $productType);
 
+        return $queryBuilder->getQuery()->getResult();
+    }
 
 
 
