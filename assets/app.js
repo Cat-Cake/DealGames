@@ -11,23 +11,24 @@ import './styles/app.css';
 // start the Stimulus application
 import './bootstrap';
 
-const CopyToClipboard = toCopy => {
+function copyPageUrl() {
+    // Récupérer l'URL de la page
+    const pageUrl = window.location.href;
 
-    const el = document.createElement(`textarea`)
+    // Créer un élément temporaire pour stocker l'URL
+    const tempElement = document.createElement('textarea');
+    tempElement.value = pageUrl;
+    tempElement.setAttribute('readonly', '');
+    tempElement.style.position = 'absolute';
+    tempElement.style.left = '-9999px';
 
-    el.value = toCopy
+    // Ajouter l'élément temporaire au corps du document
+    document.body.appendChild(tempElement);
 
-    el.setAttribute(`readonly`, ``)
+    // Sélectionner et copier le contenu de l'élément temporaire
+    tempElement.select();
+    document.execCommand('copy');
 
-    el.style.position = `absolute`
-
-    el.style.left = `-9999px`
-
-    document.body.appendChild(el)
-
-    el.select()
-
-    document.execCommand(`copy`)
-
-    document.body.removeChild(el)
+    // Supprimer l'élément temporaire
+    document.body.removeChild(tempElement);
 }
