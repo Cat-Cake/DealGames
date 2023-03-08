@@ -4,7 +4,10 @@ namespace App\Repository;
 
 use App\Entity\Product;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpFoundation\Response;
+use App\Entity\Post;
 
 /**
  * @extends ServiceEntityRepository<Product>
@@ -48,40 +51,18 @@ class ProductRepository extends ServiceEntityRepository
             ->getResult();
     }
 
-
-    public function getCreatedAtFormatted(): array
+    public function countUserPosts($user): int
     {
-        $qb = $this->createQueryBuilder('p')
-            ->select('p.id', 'p.createdAt')
-            ->getQuery();
+        $queryBuilder = $this->createQueryBuilder('p');
+        $queryBuilder->select('COUNT(p.id)')
+            ->where('p.user = :user')
+            ->setParameter('user', $user);
 
-        $results = $qb->getResult();
-
-        $formattedResults = [];
-
-        foreach ($results as $result) {
-            $createdAt = $result['createdAt'];
-            $now = new \DateTimeImmutable();
-
-            $interval = $now->diff($createdAt);
-
-            if ($interval->d >= 1) {
-                $timeAgo = $interval->format('Créé il y a %d jours');
-            } elseif ($interval->h >= 1) {
-                $timeAgo = $interval->format('Créé il y a %h heures');
-            } elseif ($interval->i >= 1) {
-                $timeAgo = $interval->format('Créé il y a %i minutes');
-            } else {
-                $timeAgo = 'Créé il y a quelques secondes';
-            }
-
-            $formattedResults[$result['id']] = [
-                'time_ago' => $timeAgo,
-            ];
-        }
-
-        return $formattedResults;
+        return $queryBuilder->getQuery()->getSingleScalarResult();
     }
+
+
+
 
 
 

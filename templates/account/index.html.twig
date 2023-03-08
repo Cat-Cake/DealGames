@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AccountController!{% endblock %}
+{% block title %}Bonjour {{ currentuUsers.username }}{% endblock %}
 
 {% block body %}
 <style>
@@ -11,7 +11,10 @@
 <main>
     <section class="d-flex justify-content-center flex-column align-items-center">
         <div class="username">
-            {{ currentuUsers.username }}
+            <p><i>Nom d'utilisateur : </i>{{ currentuUsers.username }}</p>
+        </div>
+        <div class="annonces">
+            <p><i>Nombre d'annonces : </i>{{ number_post }}</p>
         </div>
         <div class="email">
             <p><i>Email : </i>{{ currentuUsers.email }}</p>
