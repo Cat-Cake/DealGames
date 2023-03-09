@@ -22,6 +22,7 @@ class UserCrudController extends AbstractCrudController
         return [
             IdField::new('id')->onlyOnDetail(),
             TextField::new('username'),
+            TextField::new('password'),
             TextField::new('email'),
             ArrayField::new('roles'),
         ];
