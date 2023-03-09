@@ -15,7 +15,7 @@ class AccountPageController extends AbstractController
 {
     #[Route('/account/page/{id}', name: 'app_account_page')]
 
-    public function showUserAction(User $user): Response
+    public function showUserAction(User $user, ProductRepository $repo): Response
     {
 
         if (!$user) {
@@ -24,8 +24,11 @@ class AccountPageController extends AbstractController
             );
         }
 
+        $nbrProdts = $repo->countUserPosts($user);
+
         return $this->render('account_page/index.html.twig', [
             'user' => $user,
+            'number_post' => $nbrProdts,
         ]);
     }
 

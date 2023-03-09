@@ -9,6 +9,39 @@
 </style>
 
     <main>
-        {{ dump(user) }}
+        <section class="d-flex justify-content-center flex-column align-items-center">
+            <div class="username">
+                <p><i>Nom d'utilisateur : </i>{{ user.username }}</p>
+            </div>
+            <div class="annonces">
+                <p><i>Nombre d'annonces : </i>{{ number_post }}</p>
+            </div>
+            <div class="email">
+                <p><i>Email : </i>{{ user.email }}</p>
+            </div>
+            <div class="share w-25">
+                <a href=""><button class="button-empty long mb-3" onclick="function copyPageUrl() {
+            const pageUrl = window.location.href;
+
+    // Créer un élément temporaire pour stocker l'URL
+    const tempElement = document.createElement('textarea');
+    tempElement.value = pageUrl;
+    tempElement.setAttribute('readonly', '');
+    tempElement.style.position = 'absolute';
+    tempElement.style.left = '-9999px';
+
+    // Ajouter l'élément temporaire au corps du document
+    document.body.appendChild(tempElement);
+
+    // Sélectionner et copier le contenu de l'élément temporaire
+    tempElement.select();
+    document.execCommand('copy');
+
+    // Supprimer l'élément temporaire
+    document.body.removeChild(tempElement);
+            }
+            copyPageUrl()" >Partager</button></a>
+            </div>
+        </section>
     </main>
 {% endblock %}
