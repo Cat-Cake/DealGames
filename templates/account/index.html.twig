@@ -19,7 +19,9 @@
         <div class="email">
             <p><i>Email : </i>{{ currentuUsers.email }}</p>
         </div>
+
         <div class="share w-25">
+            <a href="{{ path('app_add_a_product') }}"><button class="button-full long mb-3">Ajouter une annonce</button></a>
             <a href=""><button class="button-empty long mb-3" onclick="function copyPageUrl() {
             const pageUrl = window.location.href;
 

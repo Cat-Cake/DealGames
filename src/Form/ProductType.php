@@ -27,7 +27,7 @@ class ProductType extends AbstractType
 //                'delete_label' => '...',
 //                'download_label' => '...',
                 'download_uri' => true,
-                'image_uri' => true,
+                'image_uri' => false,
 //                'imagine_pattern' => '...',
                 'asset_helper' => true,
             ]);
