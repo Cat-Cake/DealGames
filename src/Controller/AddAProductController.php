@@ -27,7 +27,7 @@ class AddAProductController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()){
             $products->setUser($this->getUser());
             $productRepository->save($products, true);
-            return $this->redirectToRoute('app_home');
+            return $this->redirectToRoute('app_redirection_push_announces');
         }
 
         return $this->render('add_a_product/index.html.twig', [
