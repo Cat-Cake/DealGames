@@ -9,24 +9,12 @@
 </style>
 
     <main>
-        <div class="filter mt-3">
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle my-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Type
-                </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="">PS5</a></li>
-                        <li><a class="dropdown-item" href="#">PS4</a></li>
-                        <li><a class="dropdown-item" href="#">Xbox</a></li>
-                        <li><a class="dropdown-item" href="#">PC</a></li>
-                        <li><a class="dropdown-item" href="#">Switch</a></li>
-                        <li><a class="dropdown-item" href="#">Accessoires</a></li>
-                    </ul>
-            </div>
+        <div class="title my-3">
+            <h3>Catalogue</h3>
         </div>
-        <div class="card-container d-flex justify-content-around flex-wrap">
+        <div class="card-container d-flex justify-content-around flex-wrap my-5">
                 {% for article in articles %}
-                    <div class="card" style="width: 18rem;">
+                    <div class="card m-2" style="width: 18rem;">
                         <img src="{{ vich_uploader_asset(article, 'imageFile') }}" class="card-img-top" alt="image article">
                         <div class="card-body">
                             <div class="d-flex justify-content-between">
